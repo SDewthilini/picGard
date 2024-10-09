@@ -1,0 +1,79 @@
+/* Login.css */
+
+/* General container styling */
+.p-4{
+    background-color: hsl(0, 0%, 96%);
+  }
+  
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Title styling */
+.login-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-top: -20px;  /* Move title up */
+    text-align: center;
+    color: #333;
+}
+
+
+
+
+
+
+/* Container styling */
+.login-container {
+    max-width: 600px;
+    width: 100%;
+    background-color:hsl(0, 1%, 33%);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Form element styling */
+.login-container .form-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Button styling */
+.login-container .btn-primary {
+    background-color: #1266f1;
+    border: none;
+}
+
+.login-container .btn-primary:hover {
+    background-color: #0d5bd1;
+}
+
+/* Social button styling */
+.social-btn {
+    color: #fff;
+    background-color: #1266f1;
+    border: none;
+    margin: 0 10px;
+}
+
+.social-btn:hover {
+    background-color: #0d5bd1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-title {
+        font-size: 2rem;
+    }
+}

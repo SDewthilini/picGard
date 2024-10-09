@@ -1,0 +1,97 @@
+/* Adding larger top margin for the gallery container */
+.gallery-container {
+    margin-top: 5rem; /* Adjust this value as needed for larger space */
+}
+
+/* Ensuring the gallery cards have small spacing between them */
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.card {
+    border: none;
+}
+
+.card img {
+    width: 50%;
+    height: 50%;
+    display: block;
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+
+/* Styling for the add image button */
+.add-image-button {
+    position: fixed;
+    top: 6rem; /* Adjust this value to place the button vertically */
+    left: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 2rem; /* Size of the plus mark */
+    line-height: 1; /* Ensures the plus mark is centered */
+    padding: 0; /* Removes default padding */
+    text-align: center;
+    vertical-align: middle; /* Centers vertically */
+}
+
+.add-image-button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles to ensure buttons in the modal are displayed correctly */
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+
+.preview-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* .img-preview {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+} */
+
+.dropzone {
+    border: 2px dashed #cccccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.preview-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.img-preview {
+    max-width: 100%;
+    height: auto;
+}

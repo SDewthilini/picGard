@@ -1,0 +1,17 @@
+/* Custom styles for the active Nav.Link */
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Shaded color for active tab */
+    color: #fff; /* Text color for active tab */
+    border-radius: 5px; /* Optional: Add some rounding */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ddd; /* Default text color for non-active links */
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light shaded color on hover */
+    color: #fff;
+  }
+  

@@ -1,0 +1,42 @@
+.gallery-card-container {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-card {
+  text-align: center;
+  padding: 20px;
+  background-color: #6c6c6c; /* Add your desired background color here */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.card-body {
+  padding: 10px;
+}
+
+
+.card-title {
+  
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.card-options {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card-options-toggle {
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.card-options-toggle span {
+  display: inline-block;
+  transform: rotate(90deg);
+}

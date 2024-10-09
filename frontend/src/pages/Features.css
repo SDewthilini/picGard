@@ -1,0 +1,66 @@
+/* Custom styles for Features component */
+h1 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.FormGroup {
+    margin-bottom: 20px;
+}
+
+.drop-area {
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px; /* Adjust this value to place the drop area further down */
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.drop-area p {
+    margin: 0;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.drop-area img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.Button {
+    margin-top: 10px;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.gallery-section {
+    margin-top: 40px;
+}
+
+.Card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.Card:hover {
+    transform: translateY(-10px);
+}
+
+.Card-Img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.Card-Body {
+    text-align: center;
+}
+
+
