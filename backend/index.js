@@ -9,6 +9,8 @@ const cors = require('cors');
 
 const app = express();
 
+const port = process.env.PORT || 4000;
+
 // Middleware
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
@@ -42,6 +44,6 @@ app.get('/read-cookies', (req, res) => {
     res.json(cookies);
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
     console.log('Server is running on port 4000');
 });
