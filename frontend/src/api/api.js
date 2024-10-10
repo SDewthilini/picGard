@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:4000', 
+  baseURL: 'https://piicgurad-server.vercel.app', 
   headers: {
     'Content-Type': 'application/json',
   },
