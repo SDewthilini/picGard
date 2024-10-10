@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//baseURL: 'https://piicgurad-server.vercel.app'
 // Create an Axios instance
 const api = axios.create({
   baseURL: 'https://piicgurad-server.vercel.app', 
