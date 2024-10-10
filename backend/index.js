@@ -16,8 +16,18 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cookieParser());
 
+let origin = ''
+
+if(process.env.ENVIRONMENT==='DEV'){
+    origin = 'http://localhost:3000'
+
+}else{
+    origin='https://pic-gard.vercel.app'
+}
+
+
 const corsOptions = {
-    origin: 'http://localhost:3000', // Replace with your allowed origin
+    origin: origin, // Replace with your allowed origin
     credentials: true, // Allow credentials (cookies) to be sent
     optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
@@ -46,4 +56,5 @@ app.get('/read-cookies', (req, res) => {
 
 app.listen(port, () => {
     console.log('Server is running on port 4000');
+    console.log(origin);
 });

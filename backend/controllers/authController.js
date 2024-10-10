@@ -76,6 +76,8 @@ module.exports.signin_get = (req, res) => {
 module.exports.signup_post = async (req, res) => {
   const { email, password } = req.body;
 
+  console.log(email);
+
   try {
     const user = await User.create({ email, password });
     const token = CreateToken(user._id, user.email);
