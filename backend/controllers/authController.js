@@ -100,7 +100,8 @@ module.exports.signin_post = async (req, res) => {
     const user = await User.login(email, password);
     const token = CreateToken(user._id, user.email);
     res.cookie("jwt", token, {
-      httpOnly: true,
+      secure: true, // make sure this is true when in production
+      sameSite: 'None', // necessary for cross-origin requests
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     res.status(200).json({ user: user._id });
@@ -112,18 +113,19 @@ module.exports.signin_post = async (req, res) => {
 };
 
 module.exports.logout_get = (req, res) => {
-    try {
-      // Clear the cookie by setting it with the same name and options
-      res.cookie("jwt", "", {
-        httpOnly: true, 
-        secure: process.env.NODE_ENV === "production", // Ensure the 'secure' flag is used in production
-        sameSite: "Strict", // Helps with CSRF protection
-        maxAge: 1, // Set the expiry to a very short time (1 millisecond)
-      });
-      res.status(200).json({ message: "Logged out successfully" });
-    } catch (error) {
-      res.status(400).json({ error: "Failed to log out" });
-      console.log(error);
-    }
-  };
-  
+  try {
+    // Clear the cookie by setting it with the same name and options
+    res.cookie("jwt", "", {
+      httpOnly: true,
+      // Helps with CSRF protection
+      secure: true, // make sure this is true when in production
+      sameSite: 'None',
+      maxAge: 1, // Set the expiry to a very short time (1 millisecond)
+    });
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    res.status(400).json({ error: "Failed to log out" });
+    console.log(error);
+  }
+};
+
