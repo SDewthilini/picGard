@@ -82,7 +82,8 @@ module.exports.signup_post = async (req, res) => {
     const user = await User.create({ email, password });
     const token = CreateToken(user._id, user.email);
     res.cookie("jwt", token, {
-      secure: true,
+      secure: true, // make sure this is true when in production
+      sameSite: 'None', // necessary for cross-origin requests
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     res.status(201).json({ user: user.email });

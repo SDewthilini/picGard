@@ -45,7 +45,7 @@ app.get('/set-cookies', (req, res) => {
     res.cookie('newUser', false);
     res.cookie('isEmployee', true, { maxAge: 1000 * 10, httpOnly: true });
 
-    res.send('You got the cookies!');
+    res.send('You got sdaa cookies!');
 });
 
 app.get('/read-cookies', (req, res) => {
