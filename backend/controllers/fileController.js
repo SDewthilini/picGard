@@ -14,7 +14,7 @@ module.exports.save_post = async (req, res) => {
         // Extract image data from the request
         const { name, data } = req.body;
 
-        // Find the user by ID
+        // Find the user by 
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
