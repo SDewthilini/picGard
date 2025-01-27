@@ -5,7 +5,6 @@ const imageSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Please enter a name for the image'],
-        unique: true,
     },
     data: {
         type: String,
