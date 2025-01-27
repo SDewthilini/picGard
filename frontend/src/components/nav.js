@@ -1,12 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { useAuth } from "./AuthProvider";
 import "./nav.css";
 import api from "../api/api";
+import { SignInButton, useAuth, UserButton } from "@clerk/clerk-react";
 
 function ColorSchemesExample() {
-  const user = useAuth();
+  const {isSignedIn} = useAuth();
   const location = useLocation(); // Hook to get the current route path
 
   const logoutClick = () => {
@@ -50,32 +50,9 @@ function ColorSchemesExample() {
                 Gallery
               </Nav.Link>
             </Nav.Item>
-            {!user && (
-              <>
-                <Nav.Item>
-                  <Nav.Link
-                    href="/signup"
-                    active={location.pathname === "/signup"}
-                  >
-                    Signup
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link
-                    href="/login"
-                    active={location.pathname === "/login"}
-                  >
-                    Login
-                  </Nav.Link>
-                </Nav.Item>
-              </>
-            )}
+            {isSignedIn ? <UserButton /> : <SignInButton />}
           </Nav>
-          {user && (
-            <Nav className="ms-auto">
-              <Nav.Link onClick={logoutClick}>Logout</Nav.Link>
-            </Nav>
-          )}
+          
         </Container>
       </Navbar>
     </>

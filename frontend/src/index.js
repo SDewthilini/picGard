@@ -11,8 +11,14 @@ import Login from './pages/Login';
 import Gallery from './pages/Gallery';
 import AuthProvider from './components/AuthProvider';
 import ProtectedRoute from './components/ProtectedRoute';
+import { ClerkProvider, SignedIn } from '@clerk/clerk-react'
 
 
+const PUBLISHABLE_KEY = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
 
 const router = createBrowserRouter(
   [
@@ -24,19 +30,19 @@ const router = createBrowserRouter(
       path: '/Features',
       element: <Features></Features>
     },
-    {
-      path: '/Signup',
-      element: <Signup></Signup>
-    },
+    // {
+    //   path: '/Signup',
+    //   element: <Signup></Signup>
+    // },
 
-    {
-      path: '/Login',
-      element: <Login></Login>
-    },
+    // {
+    //   path: '/Login',
+    //   element: <Login></Login>
+    // },
 
     {
       path: '/Gallery',
-      element: <ProtectedRoute><Gallery /></ProtectedRoute>
+      element: <SignedIn ><Gallery /></SignedIn>
     },
 
 
@@ -50,9 +56,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <AuthProvider>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <RouterProvider router={router} />
-    </AuthProvider>
+    </ClerkProvider>
+
+
+
 
   </React.StrictMode>
 );
