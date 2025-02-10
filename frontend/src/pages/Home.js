@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ColorSchemesExample from '../components/nav';
-import Footer from '../components/Footer';
+
 import './Home.css';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         <p className="content-description">Discover the best encryption methods to keep your images secure. Learn more about our features and how to get started.</p>
         <Link to="/features" className="content-link">Discover Features</Link>
       </div>
-      <Footer/>
+     
     </div>
   );
 }
